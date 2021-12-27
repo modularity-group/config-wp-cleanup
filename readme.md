@@ -1,10 +1,12 @@
 # config-wp-cleanup
 
+This module builds on WordPress and Modularity.
+
 Clean and optimize several details in WP-Dashboard and Frontend-Output.
 
 ---
 
-Version: 1.5.2
+Version: 1.6.0
 
 Author: Matze @ https://modularity.group
 
@@ -30,6 +32,9 @@ License: MIT
 - remove unnecessary meta-tags, scripts, embeds and settings from html-head
 
 ---
+
+1.6.0
+- simplify structure, cleanup namings and change base hooks
 
 1.5.2 
 - remove admion bar css in frontend - not needed for collapsed admion bar
