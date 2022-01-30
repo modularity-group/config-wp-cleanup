@@ -139,6 +139,8 @@ function wp_cleanup_branding_login(){ ?>
     background: #fff;
     background: var(--login-color-background);
     color: var(--login-color-text);
+    flex-direction: column;
+    justify-content: center;
   }
   body.login .message {
     background: var(--login-color-background);
@@ -156,7 +158,7 @@ function wp_cleanup_branding_login(){ ?>
     margin-top: 0;
     border: 0;
   }
-  .login form:before {
+  .login form#loginform:before {
     content: '<?php echo bloginfo("name"); ?>';
     color: var(--login-color-text);
     width: 100%;

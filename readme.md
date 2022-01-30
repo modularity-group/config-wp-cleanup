@@ -6,7 +6,7 @@ Clean and optimize several details in WP-Dashboard and Frontend-Output.
 
 ---
 
-Version: 1.6.0
+Version: 1.6.1 (wip)
 
 Author: Matze @ https://modularity.group
 
@@ -32,6 +32,9 @@ License: MIT
 - remove unnecessary meta-tags, scripts, embeds and settings from html-head
 
 ---
+
+1.6.1
+- adjust login page layout for language switch
 
 1.6.0
 - simplify structure, cleanup namings and change base hooks
