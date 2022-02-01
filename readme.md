@@ -6,7 +6,7 @@ Clean and optimize several details in WP-Dashboard and Frontend-Output.
 
 ---
 
-Version: 1.6.1 (wip)
+Version: 1.6.1
 
 Author: Matze @ https://modularity.group
 
