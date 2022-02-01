@@ -230,23 +230,6 @@ function wp_cleanup_branding_login(){ ?>
   <?php
 }
 
-add_action('admin_head','wp_cleanup_branding_block_editor');
-function wp_cleanup_branding_block_editor(){
-  ?>
-  <style>
-  .edit-post-header .edit-post-fullscreen-mode-close {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 25px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='37.152' height='31.347' viewBox='0 0 37.152 31.347'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cpath class='a' d='M22.576,13.764V7.822a2.323,2.323,0,0,0-3.964-1.644L4,20.593,18.612,35.005a2.322,2.322,0,0,0,3.964-1.642V27.584c6.385.158,13.363,1.314,18.576,9.262V34.525A20.892,20.892,0,0,0,22.576,13.764Z' transform='translate(-4 -5.5)'/%3E%3C/svg%3E");
-  }
-  .edit-post-header .edit-post-fullscreen-mode-close svg {
-    display: none;
-  }
-  </style>
-  <?php
-}
-
 add_action('init','wp_cleanup_head');
 function wp_cleanup_head(){
   remove_action('wp_head', 'rsd_link');
