@@ -6,7 +6,7 @@ Clean and optimize several details in WP-Dashboard and Frontend-Output.
 
 ---
 
-Version: 1.7.0
+Version: 1.7.1
 
 Author: Matze @ https://modularity.group
 
@@ -33,7 +33,7 @@ License: MIT
 
 ---
 
-1.7.0
+1.7.1
 - move documentation from dashboard widget to dashboard subpage
 
 1.6.2

@@ -128,7 +128,7 @@ add_action('admin_menu',function(){
 
 function config_wp_cleanup_documentation_callback(){
   $docu = get_page_by_path( 'doc' );
-  echo $docu ? $docu->post_content : "";
+  echo '<div class="wrap"><h1>Dokumentation</h1>'.$docu->post_content.'</div>';
 }
 
 add_filter('admin_footer_text', function() {
