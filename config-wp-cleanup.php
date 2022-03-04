@@ -113,6 +113,24 @@ add_action('wp_dashboard_setup', function() {
   );
 });
 
+add_action('admin_menu',function(){
+  if(get_page_by_path( 'doc' )){
+    add_submenu_page(
+      'index.php',
+      'Dokumentation',
+      'Dokumentation',
+      'edit_pages',
+      'wp-cleanup-documentation',
+      'config_wp_cleanup_documentation_callback'
+    );
+  }
+});
+
+function config_wp_cleanup_documentation_callback(){
+  $docu = get_page_by_path( 'doc' );
+  echo $docu ? $docu->post_content : "";
+}
+
 add_filter('admin_footer_text', function() {
   echo '<span><strong>Administrator: <a href="mailto:'.get_bloginfo('admin_email').'">'.get_bloginfo('admin_email').'</a></strong></span>';
 });

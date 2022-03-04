@@ -6,7 +6,7 @@ Clean and optimize several details in WP-Dashboard and Frontend-Output.
 
 ---
 
-Version: 1.6.2
+Version: 1.7.0
 
 Author: Matze @ https://modularity.group
 
@@ -32,6 +32,9 @@ License: MIT
 - remove unnecessary meta-tags, scripts, embeds and settings from html-head
 
 ---
+
+1.7.0
+- move documentation from dashboard widget to dashboard subpage
 
 1.6.2
 - remove block editor branding override
