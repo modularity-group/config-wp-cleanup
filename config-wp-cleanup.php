@@ -13,8 +13,8 @@ function wp_cleanup_dashboard() {
   unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
   unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
   unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
-  // unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
   if (!current_user_can('administrator') || !current_user_can('developer')) {
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
   }
 }
@@ -103,33 +103,6 @@ add_action( 'admin_bar_menu', function($wp_admin_bar) {
   $wp_admin_bar->remove_menu( 'customize' );
 }, 999 );
 
-add_action('wp_dashboard_setup', function() {
-  wp_add_dashboard_widget(
-    'modularity_dashboard_docu', get_bloginfo( 'name' ) . ' - Dokumentation', function() {
-      $docu = get_page_by_path( 'doc' );
-      echo $docu ? $docu->post_content : "";
-      echo "<br><small><em>Edit this content in the <b>Doc</b> page.</em></small>";
-    }
-  );
-});
-
-add_action('admin_menu',function(){
-  if(get_page_by_path( 'doc' )){
-    add_submenu_page(
-      'index.php',
-      'Dokumentation',
-      'Dokumentation',
-      'edit_pages',
-      'wp-cleanup-documentation',
-      'config_wp_cleanup_documentation_callback'
-    );
-  }
-});
-
-function config_wp_cleanup_documentation_callback(){
-  $docu = get_page_by_path( 'doc' );
-  echo '<div class="wrap"><h1>Dokumentation</h1>'.$docu->post_content.'</div>';
-}
 
 add_filter('admin_footer_text', function() {
   echo '<span><strong>Administrator: <a href="mailto:'.get_bloginfo('admin_email').'">'.get_bloginfo('admin_email').'</a></strong></span>';
