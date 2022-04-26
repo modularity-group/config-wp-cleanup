@@ -86,13 +86,14 @@ add_action("login_enqueue_scripts", function(){
   );
 });
 
-add_action("get_header", function() {
+add_action("get_header", "wp_cleanup_code_branding");
+function wp_cleanup_code_branding() {
   $themeAuthorUri = wp_get_theme()->get('AuthorURI');
   $themeCredits = "~ Web development by $themeAuthorUri ~";
   $themeCreditsLine = "";
   $themeCreditsLine = str_pad($themeCreditsLine, mb_strlen($themeCredits), "~");
   echo "<!-- \n\n$themeCreditsLine\n$themeCredits\n$themeCreditsLine\n\n -->";
-});
+}
 
 add_action( 'wp_before_admin_bar_render', function() {
   global $wp_admin_bar;

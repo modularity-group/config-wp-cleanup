@@ -6,7 +6,7 @@ Clean and optimize several details in WP-Dashboard and Frontend-Output.
 
 ---
 
-Version: 1.8.1
+Version: 1.8.2
 
 Author: Matze @ https://modularity.group
 
@@ -32,6 +32,9 @@ License: MIT
 - remove unnecessary meta-tags, scripts, embeds and settings from html-head
 
 ---
+
+1.8.2 
+- create removable action for code branding feature (problems with `acf_form_head()` on `get_header` hook)
 
 1.8.1
 - fix dashboard-widget display 
