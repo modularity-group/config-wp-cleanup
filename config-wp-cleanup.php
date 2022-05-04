@@ -71,6 +71,23 @@ function wp_cleanup_adminbar() { ?>
   <?php
 }
 
+add_action('admin_head','wp_cleanup_block_editor_close_icon');
+function wp_cleanup_block_editor_close_icon(){
+  ?>
+  <style>
+  .edit-post-header .edit-post-fullscreen-mode-close svg {
+    display:none;
+  }
+  .edit-post-header .edit-post-fullscreen-mode-close {
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='13.5' viewBox='0 0 16 13.5'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cpath class='a' d='M12,9.059V6.5a1,1,0,0,0-1.707-.708L4,12l6.293,6.207A1,1,0,0,0,12,17.5V15.011c2.75.068,5.755.566,8,3.989V18A9,9,0,0,0,12,9.059Z' transform='translate(-4 -5.5)'/%3E%3C/svg%3E");
+  }
+  </style>
+  <?php
+}
+
 add_action('get_header', 'wp_cleanup_remove_admin_bar_css');
 function wp_cleanup_remove_admin_bar_css() {
 	remove_action('wp_head', '_admin_bar_bump_cb');
